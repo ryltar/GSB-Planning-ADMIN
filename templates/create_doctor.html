@@ -1,0 +1,98 @@
+
+    <div class="row main">
+
+      <div class="panel-heading">
+         <div class="panel-title text-center">
+            <h3 class="title">Ajouter un docteur</h3>
+            <hr />
+          </div>
+      </div>
+
+      <div class="main-login main-center">
+        <form class="form-horizontal" method="post" action="{{ url_for('send_doctor') }}">
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="lastname" id="namedoctor" placeholder="Nom"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="firstname" id="surnamedoctor"  placeholder="Prénom"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="email" id="emaildoctor"  placeholder="E-mail"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="num" id="numedoctor"  placeholder="Téléphone"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                <select class="form-control" name="employee" id="employee">
+                    <option value="" disabled selected>employee</option>
+                {% for employee in employees %}
+                    <option value="{{employee.id}}">{{employee.lastname + " " + employee.firstname}}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                <select class="form-control" name="address" id="edit_address">
+                    <option value="" disabled selected>adresse</option>
+                {% for address in addresses %}
+                    <option id="{{address.id}}" value="{{address.id}}">{{address.num+" "+address.street+" "+address.codepost+" "+address.city}}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                <select class="form-control" name="specialty" id="specialty">
+                    <option value="" disabled selected>Specialité</option>
+                {% for specialty in specialties %}
+                    <option id="{{specialty.id}}" value="{{specialty.id}}">{{specialty.label}}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>
+          </div>
+
+        </form>
+      </div>
+    </div>

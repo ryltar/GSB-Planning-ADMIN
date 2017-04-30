@@ -1,0 +1,43 @@
+<table id="grid-medic" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" >
+  <thead>
+    <tr>
+      <th data-column-id="id" data-type="numeric" data-identifier="true" data-sortable="false">Id</th>
+      <th data-column-id="lib" data-sortable="false">Nom </th>
+      <th data-column-id="description" data-sortable="false">Description</th>
+      <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
+    </tr>
+  </thead>
+</table>
+
+<div id="edit_model" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modifier un docteur</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="frm_edit">
+          <input type="hidden" value="edit" name="action" id="action">
+          <input type="hidden" value="0" name="edit_id" id="edit_id">
+          <div class="form-group">
+            <label for="salary" class="control-label">Nom:</label>
+            <input type="text" class="form-control" id="edit_libmedic" name="edit_libmedic"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Description:</label>
+            <textarea name="edit_descmedic" class='form-control' id="edit_descmedic">
+
+            </textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="btn_edit" data-dismiss="modal" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename="js/eventMedic.js") }}"></script>

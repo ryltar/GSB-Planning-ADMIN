@@ -1,0 +1,63 @@
+<table id="grid-address" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" >
+  <thead>
+    <tr>
+      <th data-column-id="id" data-type="numeric" data-sortable="false" data-identifier="true">id</th>
+      <th data-column-id="num" data-sortable="false">numéro</th>
+      <th data-column-id="street" data-sortable="false">Rue</th>
+      <th data-column-id="codepost" data-sortable="false">Code postal</th>
+      <th data-column-id="city" data-sortable="false">Ville</th>
+      <th data-column-id="country" data-sortable="false" >Pays</th>
+      <th data-column-id="indication" data-sortable="false">Indication</th>
+      <th data-column-id="commands" data-formatter="commands" data-sortable="false"></th>
+    </tr>
+  </thead>
+</table>
+
+<div id="edit_model" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modifier une adresse</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="frm_edit">
+          <input type="hidden" value="edit" name="action" id="action">
+          <input type="hidden" value="0" name="edit_idaddr" id="edit_idaddr">
+          <div class="form-group">
+            <label for="salary" class="control-label">Numéro:</label>
+            <input type="text" class="form-control" id="edit_num" name="edit_num"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Rue:</label>
+            <input type="text" class="form-control" id="edit_street" name="edit_street"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Code postal:</label>
+            <input type="text" class="form-control" id="edit_codepost" name="edit_codepost"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Ville:</label>
+            <input type="text" class="form-control" id="edit_city" name="edit_city"/>
+          </div>
+           <div class="form-group">
+            <label for="name" class="control-label">Pays:</label>
+            <input type="text" class="form-control" id="edit_country" name="edit_country"/>
+          </div>
+          <div class="form-group">
+            <label for="name" class="control-label">Indication:</label>
+            <textarea name="edit_indication" id="edit_indication" class="form-control"></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="btn_edit" data-dismiss="modal" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename="js/eventAddress.js") }}"></script>
+

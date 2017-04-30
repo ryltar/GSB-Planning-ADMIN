@@ -1,0 +1,102 @@
+    <div class="row main">
+      <div class="panel-heading">
+         <div class="panel-title text-center">
+            <h3 class="title">Ajouter un employé</h3>
+            <hr />
+          </div>
+      </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+      <div class="main-login main-center">
+        <form class="form-horizontal" method="post" action="{{ url_for('send_employee') }}">
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input required type="text" class="form-control" name="nameemployee" id="nameemployee" placeholder="Nom"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input required type="text" class="form-control" name="surnameemployee" id="surnameemployee"  placeholder="Prénom"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <select name="add_admin" class="form-control" id="add_admin" required>
+                  <option value="" disabled selected>Admin?</option>
+                  <option value="true">Oui</option> 
+                  <option value="false">Non</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                <input required type="text" class="form-control" name="pseudoemployee" id="pseudoemployee"  placeholder="Pseudo"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input required type="text" class="form-control" name="emailemployee" id="emailemployee"  placeholder="E-mail"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                <input required type="text" class="form-control" name="numemployee" id="numeemployee"  placeholder="Téléphone"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input required type="password" class="form-control" name="passwordemployee" id="passwordemployee"  placeholder="Mot de passe"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input required type="password" class="form-control" name="confirm-passwordemployee" id="confirm-passwordemployee"  placeholder="Confirmation du mot de passe"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>
+          </div>
+
+        </form>
+      </div>
+    </div>

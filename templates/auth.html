@@ -1,0 +1,66 @@
+{% extends 'main_frame.html' %}
+
+{% block body %}
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">GSB Planning</a>
+            </div>
+            <!-- Top Menu Items -->
+           <ul>
+                <li class="dropdown">
+                
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        </nav>
+
+        <div id="page-wrapper-auth">
+            <div class="container-fluid">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="alert alert-danger">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+              <!-- Page Heading -->
+              <form class="authForm form-horizontal" action="{{ url_for('auth_validation') }}" method="post">
+                <div class="form-group">
+                  <label for="email" class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" name="email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-sm-2 control-label">Mot de passe</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button onclick="test()" id="log" type="submit" class="btn btn-default">Connexion</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper-auth -->
+
+    </div>
+    <!-- /#wrapper -->
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{
+  "name": "gsb-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "ent": "^2.2.0",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryltar/GSB-ADMIN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryltar/GSB-ADMIN/issues"
+  },
+  "homepage": "https://github.com/ryltar/GSB-ADMIN#readme"
+}
