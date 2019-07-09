@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename="js/jquery.js") }}"></script>
+<script>
+
+  $( document ).ready(function() {
+          $("#medic-container-contextual").load("/creer-medic");
+
+  });
+
+</script>
+
+<div id="container">
+
+  <nav id="navbar" class="navbar navbar-dark bg-inverse">
+    <ul id="navbar-content" class="nav navbar-nav">
+
+      <li class="nav-item active">
+        <a class="nav-link" onclick="loadGridMedic()">Voir les produits<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" onclick="loadFormMedic()">Ajouter un produit</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div id="medic-container-contextual">
+  </div>
+
+</div>
+
+{% endblock %}

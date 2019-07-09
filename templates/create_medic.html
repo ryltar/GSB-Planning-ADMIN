@@ -1,0 +1,38 @@
+
+    <div class="row main">
+
+      <div class="panel-heading">
+         <div class="panel-title text-center">
+            <h3 class="title">Ajouter un produit</h3>
+            <hr />
+          </div>
+      </div>
+
+      <div class="main-login main-center">
+        <form class="form-horizontal" method="post" action="{{ url_for('send_medic') }}">
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="libmedic" id="libmedic" placeholder="Nom"/ required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <textarea class="form-control" name="descmedic" id="descmedic" placeholder="Description du médicament" required/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>
+          </div>
+
+        </form>
+      </div>
+    </div>

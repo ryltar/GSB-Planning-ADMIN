@@ -1,0 +1,80 @@
+<table id="grid-doctor" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" >
+  <thead>
+    <tr>
+      <th data-column-id="id" data-type="numeric" data-sortable="false" data-identifier="true">id</th>
+      <th data-column-id="lastname" data-sortable="false">Nom</th>
+      <th data-column-id="firstname" data-sortable="false">Prénom</th>
+      <th data-column-id="email" data-sortable="false">Email</th>
+      <th data-column-id="num_tel" data-sortable="false">Téléphone</th>
+      <th data-column-id="id_employee" data-sortable="false" >id de l'employee</th>
+      <th data-column-id="id_address" data-sortable="false">id de l'adresse</th>
+      <th data-column-id="id_specialty" data-sortable="false">id de la specialité</th>
+      <th data-column-id="commands" data-formatter="commands" data-sortable="false"></th>
+    </tr>
+  </thead>
+</table>
+
+<div id="edit_model" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modifier une adresse</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="frm_edit">
+          <input type="hidden" value="edit" name="action" id="action">
+          <input type="hidden" value="0" name="edit_id" id="edit_id">
+          <div class="form-group">
+            <label for="salary" class="control-label">Nom:</label>
+            <input type="text" class="form-control" id="edit_lastname" name="edit_lastname"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Prénom:</label>
+            <input type="text" class="form-control" id="edit_firstname" name="edit_firstname"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Email:</label>
+            <input type="text" class="form-control" id="edit_email" name="edit_email"/>
+          </div>
+          <div class="form-group">
+            <label for="salary" class="control-label">Téléphone:</label>
+            <input type="text" class="form-control" id="edit_num" name="edit_num"/>
+          </div>
+           <div class="form-group">
+            <label for="name" class="control-label">Employee:</label>
+            <select class="form-control" name="edit_employee" id="edit_employee">
+                {% for employee in employees %}
+                    <option value="{{employee.id}}">{{employee.lastname + " " + employee.firstname}}</option>
+                {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="name" class="control-label">Adresse:</label>
+            <select class="form-control" name="edit_address" id="edit_address">
+                {% for address in addresses %}
+                    <option value="{{address.id}}">{{address.num+" "+address.street+" "+address.codepost+" "+address.city}}</option>
+                {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="name" class="control-label">Specialité:</label>
+            <select class="form-control" name="edit_specialty" id="edit_specialty">
+                {% for specialty in specialties %}
+                    <option value="{{specialty.id}}">{{specialty.label}}</option>
+                {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="btn_edit" data-dismiss="modal" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename="js/eventDoctor.js") }}"></script>
+

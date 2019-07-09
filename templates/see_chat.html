@@ -1,0 +1,27 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<div id="content">
+  <div id="chat">
+    <div id="zone_chat">
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div id="formulaire_chat">
+    <div class="bar bar-header item-input-inset">
+      <input type="text" class="user" placeholder="Répondre à " class="form-control" />
+      <textarea type="text" name="message" class="form-control" id="message" placeholder="Votre message..."></textarea>
+      <button onclick="myMessage()" type="submit" class="button send button-large button-positive btn btn-success">Envoyer</button>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename="js/jquery.js") }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+<script src="{{ url_for('static', filename="js/eventChat.js") }}"></script>
+
+{% endblock %}
+
