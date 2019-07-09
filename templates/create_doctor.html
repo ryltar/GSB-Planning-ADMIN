@@ -75,6 +75,23 @@
             </div>
           </div>
 
+<<<<<<< HEAD
+=======
+          <div class="form-group">
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                <select class="form-control" name="specialty" id="specialty">
+                    <option value="" disabled selected>Specialité</option>
+                {% for specialty in specialties %}
+                    <option id="{{specialty.id}}" value="{{specialty.id}}">{{specialty.label}}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+
+>>>>>>> 0551cff44729f4602c15fa8bc863e51cdca4520d
           <div class="form-group ">
             <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>
           </div>
